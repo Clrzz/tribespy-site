@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="TribeSpy is a Discord bot that shows who is online on your ARK and Steam game servers, remembers last connections and alerts you when a server goes down.">
+<meta name="description" content="TribeSpy est un bot Discord qui affiche les joueurs en ligne sur vos serveurs ARK et Steam, retient les dernières connexions et vous prévient en cas de panne.">
 <meta name="theme-color" content="#0A0C0E">
-<link rel="alternate" hreflang="fr" href="fr/">
-<link rel="alternate" hreflang="en" href="./">
-<meta property="og:title" content="TribeSpy — live player tracker for ARK and Steam servers">
-<meta property="og:description" content="Live players, last connection per map, outage and raid alerts, right inside Discord.">
+<link rel="alternate" hreflang="en" href="../">
+<link rel="alternate" hreflang="fr" href="./">
+<meta property="og:title" content="TribeSpy — suivi des joueurs de vos serveurs ARK et Steam">
+<meta property="og:description" content="Joueurs en direct, dernière connexion par map, alertes de panne et de raid, directement dans Discord.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
-<title>TribeSpy — Discord bot for ARK and Steam game servers</title>
+<title>TribeSpy — bot Discord pour serveurs ARK et Steam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -172,193 +172,173 @@ footer p { max-width: 38rem; }
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="#"><span class="logo" role="img" aria-label="TribeSpy logo"></span><span>Tribe<b>Spy</b></span></a>
+    <a class="brand" href="#"><span class="logo" role="img" aria-label="Logo TribeSpy"></span><span>Tribe<b>Spy</b></span></a>
     <nav class="main" aria-label="Navigation">
-      <a href="#features">Features</a><a href="#preview">Preview</a><a href="#start">Get started</a>
-      <a href="#commands">Commands</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support</a><a href="fr/" data-setlang="en" hreflang="fr" lang="fr" aria-label="Voir en français">FR</a>
+      <a href="#fonctions">Fonctions</a><a href="#apercu">Aperçu</a><a href="#demarrer">Démarrer</a>
+      <a href="#commandes">Commandes</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support</a><a href="../" data-setlang="en" hreflang="en" lang="en" aria-label="View in English">EN</a>
     </nav>
   </header>
 
   <div class="hero">
     <div>
-      <span class="label">Discord bot for game servers</span>
-      <h1 style="margin-top:.8rem">See who's playing on your servers, right inside Discord.</h1>
-      <p class="lead">TribeSpy shows who is online, remembers when each player was last seen, and alerts you when a server goes down or a watched player joins.</p>
+      <span class="label">Bot Discord pour serveurs de jeu</span>
+      <h1 style="margin-top:.8rem">Voyez qui joue sur vos serveurs, directement dans Discord.</h1>
+      <p class="lead">TribeSpy affiche les joueurs en ligne, retient la dernière connexion de chacun et vous prévient quand un serveur tombe ou qu'un joueur surveillé arrive.</p>
       <div class="cta">
-        <a class="btn primary" id="invite" href="https://discord.com/oauth2/authorize?client_id=1556578781680898060&permissions=216064&scope=bot%20applications.commands" target="_blank" rel="noopener">Add to Discord</a>
-        <a class="btn" href="#preview">See a preview</a>
+        <a class="btn primary" id="invite" href="https://discord.com/oauth2/authorize?client_id=1556578781680898060&permissions=216064&scope=bot%20applications.commands" target="_blank" rel="noopener">Ajouter à Discord</a>
+        <a class="btn" href="#apercu">Voir un aperçu</a>
       </div>
-      <p class="note">Free for up to 3 game servers. The bot doesn't read your messages.</p>
+      <p class="note">Gratuit jusqu'à 3 serveurs de jeu. Le bot ne lit pas vos messages.</p>
     </div>
-    <div class="hero-logo"><div class="logo" role="img" aria-label="TribeSpy mascot: a robot dinosaur wearing night-vision goggles"></div></div>
+    <div class="hero-logo"><div class="logo" role="img" aria-label="Mascotte TribeSpy : un dinosaure robot aux lunettes de vision nocturne"></div></div>
   </div>
 
-  <section id="features">
-    <div class="head"><span class="label">Features</span><h2>What TribeSpy does</h2></div>
+  <section id="fonctions">
+    <div class="head"><span class="label">Fonctions</span><h2>Ce que fait TribeSpy</h2></div>
     <div class="feats">
-      <div class="feat"><h3>Live players</h3><p>One message, updated every minute, with the players of each server and their tribe.</p></div>
-      <div class="feat"><h3>Last connection</h3><p><code>/history</code> tells you when a player was last seen on each map, in your own time zone.</p></div>
-      <div class="feat"><h3>Outage alerts</h3><p>Get notified when a server goes down, and when it comes back.</p></div>
-      <div class="feat"><h3>Blacklist</h3><p>An alert shows up when a watched player connects.</p></div>
-      <div class="feat"><h3>Player roster <span class="tag">premium</span></h3><p>All your players with their 2 favorite maps and time played. Players inactive for 30 days drop off automatically.</p></div>
-      <div class="feat"><h3>Raid alert &amp; recaps <span class="tag">premium</span></h3><p>Alert when 3 watched players show up on the same map within 5 minutes. Daily recap every evening and a weekly podium on Sundays.</p></div>
+      <div class="feat"><h3>Joueurs en direct</h3><p>Un message unique, mis à jour chaque minute, avec les joueurs de chaque serveur et leur tribu.</p></div>
+      <div class="feat"><h3>Dernière connexion</h3><p><code>/history</code> dit quand un joueur a été vu pour la dernière fois sur chaque map, à l'heure de chez vous.</p></div>
+      <div class="feat"><h3>Alertes de panne</h3><p>Vous êtes prévenu quand un serveur tombe, et quand il revient.</p></div>
+      <div class="feat"><h3>Blacklist</h3><p>Une alerte s'affiche quand un joueur surveillé se connecte.</p></div>
+      <div class="feat"><h3>Fiche des joueurs</h3><p>Tous vos joueurs, avec leurs 2 maps préférées et le temps passé. Les inactifs depuis 30 jours disparaissent seuls.</p></div>
+      <div class="feat"><h3>Alerte raid et bilans</h3><p>Alerte si 3 joueurs surveillés arrivent sur la même map en 5 minutes. Bilan chaque soir et podium chaque dimanche.</p></div>
     </div>
   </section>
 
-  <section id="preview">
-    <div class="head"><span class="label">Preview</span><h2>What you'll see in Discord</h2><p>Examples with made-up player names.</p></div>
+  <section id="apercu">
+    <div class="head"><span class="label">Aperçu</span><h2>Ce que vous verrez dans Discord</h2><p>Exemples avec des pseudos fictifs. Le bot s'affiche en français ou en anglais, au choix de chaque serveur.</p></div>
     <div class="shots">
       <figure>
-        <figcaption>Dashboard</figcaption>
+        <figcaption>Tableau de bord</figcaption>
         <div class="screen"><div class="body">
           <div class="embed">
-            <div class="t">Players online — 17 player(s)</div>
-            <div><b>Ragnarok</b><br><i class="dot on"></i><b>12/70</b> — Alice [The Wolves], Bastian, Chloe, Dorian…</div>
-            <div><b>The Island</b><br><i class="dot on"></i><b>5/70</b> — Gael, Hana, <span class="bl"><b>Karma</b> [Stalkers]</span></div>
-            <div><b>Valguero</b><br><i class="dot off"></i><b>Offline</b></div>
+            <div class="t">Joueurs en ligne — 17 joueur(s)</div>
+            <div><b>Ragnarok</b><br><i class="dot on"></i><b>12/70</b> — Alice [Les Loups], Bastien, Chloé, Dorian…</div>
+            <div><b>The Island</b><br><i class="dot on"></i><b>5/70</b> — Gaël, Hana, <span class="bl"><b>Karma</b> [Rôdeurs]</span></div>
+            <div><b>Valguero</b><br><i class="dot off"></i><b>Hors ligne</b></div>
           </div>
-          <div class="embed red"><div class="t">Server crash alert</div><div>Server <b>Valguero</b> just went <b>offline</b>!</div></div>
+          <div class="embed red"><div class="t">Alerte crash serveur</div><div>Le serveur <b>Valguero</b> vient de passer <b>hors ligne</b> !</div></div>
         </div></div>
       </figure>
       <figure>
         <figcaption>/history player:ali</figcaption>
         <div class="screen"><div class="body"><div class="embed">
-          <div class="t">Connection history</div>
-          <div><b>Alice</b> [The Wolves]<br>└ <i class="dot on"></i>Ragnarok — <b>online now</b><br>└ <i class="dot"></i>The Island — <b>3h12 ago</b> · 05 Oct at 05:31<br>└ <i class="dot"></i>Valguero — <b>5 d ago</b> · 30 Sep at 08:43</div>
+          <div class="t">Historique des connexions</div>
+          <div><b>Alice</b> [Les Loups]<br>└ <i class="dot on"></i>Ragnarok — <b>en ligne maintenant</b><br>└ <i class="dot"></i>The Island — <b>il y a 3h12</b> · 05 Oct à 05:31<br>└ <i class="dot"></i>Valguero — <b>il y a 5 j</b> · 30 Sep à 08:43</div>
         </div></div></div>
       </figure>
       <figure>
-        <figcaption>Player roster (premium)</figcaption>
+        <figcaption>Fiche des joueurs</figcaption>
         <div class="screen"><div class="body"><div class="embed purple">
-          <div class="t">Cluster players — 3 player(s)</div>
-          <div><i class="dot on"></i><b>Alice</b> [The Wolves] — Ragnarok <span class="mono">41h 20m</span> · The Island <span class="mono">6h 05m</span></div>
-          <div><i class="dot"></i><b>Bastian</b> — Ragnarok <span class="mono">33h 10m</span></div>
-          <div><i class="dot"></i><b>Chloe</b> — Valguero <span class="mono">12h 45m</span> · Ragnarok <span class="mono">3h 02m</span></div>
+          <div class="t">Joueurs du cluster — 3 joueur(s)</div>
+          <div><i class="dot on"></i><b>Alice</b> [Les Loups] — Ragnarok <span class="mono">41h 20m</span> · The Island <span class="mono">6h 05m</span></div>
+          <div><i class="dot"></i><b>Bastien</b> — Ragnarok <span class="mono">33h 10m</span></div>
+          <div><i class="dot"></i><b>Chloé</b> — Valguero <span class="mono">12h 45m</span> · Ragnarok <span class="mono">3h 02m</span></div>
         </div></div></div>
       </figure>
     </div>
   </section>
 
-  <section id="start">
-    <div class="head"><span class="label">Get started</span><h2>Ready in 3 steps</h2><p>Requires the “Manage Server” permission.</p></div>
+  <section id="demarrer">
+    <div class="head"><span class="label">Démarrer</span><h2>Prêt en 3 étapes</h2><p>Réservé aux membres qui ont la permission « Gérer le serveur ».</p></div>
     <ol class="steps">
-      <li><h3>Add the bot</h3><p>Click “Add to Discord” and pick your server.</p></li>
-      <li><h3>Pick a channel</h3><p>Type <code>/config channels</code> to choose where the dashboard is displayed.</p></li>
-      <li><h3>Add your servers</h3><p>Type <code>/config add-server</code> with a name, the IP and the query port. The bot checks that it responds.</p></li>
+      <li><h3>Ajoutez le bot</h3><p>Cliquez sur « Ajouter à Discord » et choisissez votre serveur.</p></li>
+      <li><h3>Choisissez le salon</h3><p>Tapez <code>/config channels</code> pour choisir où afficher le tableau de bord.</p></li>
+      <li><h3>Ajoutez vos serveurs</h3><p>Tapez <code>/config add-server</code> avec un nom, l'IP et le port de requête. Puis <code>/config language</code> pour passer le bot en français.</p></li>
     </ol>
   </section>
 
-  <section id="commands">
-    <div class="head"><span class="label">Commands</span><h2>All commands</h2></div>
+  <section id="commandes">
+    <div class="head"><span class="label">Commandes</span><h2>Toutes les commandes</h2></div>
     <div class="cmds">
       <div>
-        <h3>For everyone</h3>
+        <h3>Pour tout le monde</h3>
         <dl>
-          <div><dt>/history</dt><dd>Last connection of a player on each map, or who played on a given map.</dd></div>
-          <div><dt>/info</dt><dd>A player's playtime, map by map.</dd></div>
-          <div><dt>/stats</dt><dd>Key numbers for your Discord server.</dd></div>
-          <div><dt>/help</dt><dd>The list of commands.</dd></div>
+          <div><dt>/history</dt><dd>Dernière connexion d'un joueur sur chaque map, ou qui est passé sur une map.</dd></div>
+          <div><dt>/info</dt><dd>Temps de jeu d'un joueur, map par map.</dd></div>
+          <div><dt>/stats</dt><dd>Chiffres clés de votre serveur Discord.</dd></div>
+          <div><dt>/help</dt><dd>La liste des commandes.</dd></div>
         </dl>
       </div>
       <div>
-        <h3>For admins</h3>
+        <h3>Pour les administrateurs</h3>
         <dl>
-          <div><dt>/config</dt><dd>Channels, time zone, language, adding and removing game servers, configuration status.</dd></div>
-          <div><dt>/blacklist</dt><dd>Add, remove or list watched players.</dd></div>
-          <div><dt>/tribe</dt><dd>Link a player to a tribe, shown next to their name.</dd></div>
-          <div><dt>/data</dt><dd>Erase a player's data, or the whole history.</dd></div>
+          <div><dt>/config</dt><dd>Salons, fuseau horaire, langue, ajout et retrait des serveurs de jeu, état de la configuration.</dd></div>
+          <div><dt>/blacklist</dt><dd>Ajouter, retirer ou lister les joueurs surveillés.</dd></div>
+          <div><dt>/tribe</dt><dd>Associer un joueur à une tribu, affichée à côté de son pseudo.</dd></div>
+          <div><dt>/data</dt><dd>Effacer les données d'un joueur, ou tout l'historique.</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <section id="pricing">
-    <div class="head"><span class="label">Pricing</span><h2>Free to start</h2></div>
-    <div class="plans">
-      <div class="plan">
-        <h3>Free</h3>
-        <div class="price">€0</div>
-        <ul>
-          <li>3 game servers</li>
-          <li>Live dashboard</li>
-          <li>Connections and outage alerts</li>
-          <li>/history, /info, /stats</li>
-          <li>Blacklist of 10 players</li>
-          <li class="no">Player roster</li>
-          <li class="no">Raid alert and recaps</li>
-        </ul>
-      </div>
+  <section id="tarifs">
+    <div class="head"><span class="label">Tarifs</span><h2>100 % gratuit</h2></div>
+    <div class="plans" style="grid-template-columns:minmax(0,520px)">
       <div class="plan pro">
-        <h3>Premium</h3>
-        <div class="price">€7.99<small>per month, per Discord server</small></div>
+        <h3>Gratuit</h3>
+        <div class="price">0 €<small>sans carte, sans limite de durée</small></div>
         <ul>
-          <li>Up to 30 game servers</li>
-          <li>Everything in Free</li>
-          <li>Player roster with 2 favorite maps</li>
-          <li>Raid alert</li>
-          <li>Daily recap and weekly podium</li>
-          <li>Blacklist of up to 500 players</li>
+          <li>Jusqu'à 10 serveurs de jeu</li>
+          <li>Tableau de bord en direct</li>
+          <li>Connexions et alertes de panne</li>
+          <li>/history, /info, /stats</li>
+          <li>Fiche des joueurs avec 2 maps préférées</li>
+          <li>Alerte raid, bilan quotidien et podium hebdomadaire</li>
+          <li>Blacklist jusqu'à 500 joueurs</li>
         </ul>
-        <a class="btn primary" href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener" style="justify-self:start">Get Premium</a>
+        <a class="btn primary" href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener" style="justify-self:start">Rejoindre le support</a>
       </div>
     </div>
-    <p class="small">Premium is activated from our support server.</p>
+    <p class="small">TribeSpy est gratuit pendant que le projet grandit. Besoin de plus de 10 serveurs ? Demandez sur notre serveur de support.</p>
   </section>
 
   <section id="faq">
-    <div class="head"><span class="label">FAQ</span><h2>Frequently asked questions</h2></div>
-    <details><summary>Which games are supported?</summary><p>TribeSpy uses the Steam query protocol (A2S). It is built and tested for ARK: Survival Evolved. Other games using this protocol may work, with no guarantee.</p></details>
-    <details><summary>Which port should I enter?</summary><p>Your server's query port, which is often different from the game port. If the bot can't reach it, it tells you when you add the server.</p></details>
-    <details><summary>Does the bot read our messages?</summary><p>No. It has no access to messages or to the member list. It only writes in the channels you choose.</p></details>
-    <details><summary>Can I use the bot in French?</summary><p>Yes. Run <code>/config language</code> and choose Français. The language is set per Discord server.</p></details>
-    <details><summary>How do I get Premium?</summary><p>Premium applies to one Discord server. Join our support server and open a ticket: once paid, it is activated with your server ID. You can go back to Free at any time.</p></details>
+    <div class="head"><span class="label">FAQ</span><h2>Questions fréquentes</h2></div>
+    <details><summary>Quels jeux sont compatibles ?</summary><p>TribeSpy utilise le protocole de requête Steam (A2S). Il est pensé et testé pour ARK : Survival Evolved. D'autres jeux qui utilisent ce protocole peuvent fonctionner, sans garantie.</p></details>
+    <details><summary>Quel port dois-je donner ?</summary><p>Le port de requête (query port) de votre serveur, souvent différent du port de jeu. Si le bot n'arrive pas à le joindre, il vous le dit à l'ajout.</p></details>
+    <details><summary>Le bot lit-il nos messages ?</summary><p>Non. Il n'a accès ni aux messages ni à la liste des membres. Il écrit seulement dans les salons que vous choisissez.</p></details>
+    <details><summary>Le bot parle-t-il français ?</summary><p>Oui. Tapez <code>/config language</code> et choisissez Français. La langue se règle pour chaque serveur Discord.</p></details>
+    <details><summary>C'est vraiment gratuit ?</summary><p>Oui. Toutes les fonctions sont gratuites pour l'instant. Si des options payantes apparaissent un jour, ce que vous utilisez gratuitement aujourd'hui le restera.</p></details>
   </section>
 
-  <section id="privacy">
-    <span id="confidentialite"></span>
-    <div class="head"><span class="label">Privacy</span><h2>Your data</h2><p>A plain-language summary. To be reviewed by a legal professional before the public launch.</p></div>
+  <section id="confidentialite">
+    <div class="head"><span class="label">Confidentialité</span><h2>Vos données</h2><p>Résumé en langage simple. À faire relire par un juriste avant l'ouverture au public.</p></div>
     <div class="legal">
       <div>
-        <h3>What is stored</h3>
+        <h3>Ce qui est enregistré</h3>
         <ul>
-          <li><b>In-game names</b>, maps, last connection time and playtime.</li>
-          <li><b>Your configuration</b>: channels, game servers, blacklist and tribes.</li>
-          <li><b>Nothing else</b>: no messages, no Discord members, no payment data.</li>
-          <li>Each Discord server only sees its own data.</li>
+          <li><b>Pseudos de jeu</b>, maps, heure de dernière connexion et temps de jeu.</li>
+          <li><b>Votre configuration</b> : salons, serveurs de jeu, blacklist et tribus.</li>
+          <li><b>Rien d'autre</b> : ni messages, ni membres Discord, ni paiement.</li>
+          <li>Chaque serveur Discord ne voit que ses propres données.</li>
         </ul>
       </div>
       <div>
-        <h3>Retention and rights</h3>
+        <h3>Durée et droits</h3>
         <ul>
-          <li><b>180 days</b>: old data is deleted automatically.</li>
-          <li><b>Erasure</b>: <code>/data delete-player</code> or <code>/data reset</code>.</li>
-          <li><b>If the bot leaves</b>: data is deleted after 30 days.</li>
-          <li><b>Contact</b>: <a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">support Discord server</a></li>
-          <li><b>Publisher</b>: TribeSpy, independent project</li>
+          <li><b>180 jours</b> : suppression automatique des anciennes données.</li>
+          <li><b>Effacement</b> : <code>/data delete-player</code> ou <code>/data reset</code>.</li>
+          <li><b>Départ du bot</b> : données supprimées après 30 jours.</li>
+          <li><b>Contact</b> : <a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">serveur Discord de support</a></li>
+          <li><b>Éditeur</b> : TribeSpy, projet indépendant</li>
         </ul>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>TribeSpy is an independent service, not affiliated with Studio Wildcard, Valve or Discord. ARK is a trademark of its owners.</p>
+    <p>TribeSpy est un service indépendant, non affilié à Studio Wildcard, Valve ou Discord. ARK est une marque de ses propriétaires.</p>
     <p>© <span id="yr">2026</span> TribeSpy · <a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support Discord</a></p>
   </footer>
 </div>
 
 <script>
   document.getElementById("yr").textContent = new Date().getFullYear();
-  // Langue : choix mémorisé, sinon langue du navigateur (les francophones sont envoyés vers /fr/).
-  (function () {
-    var saved = null;
-    try { saved = localStorage.getItem("tribespy_lang"); } catch (e) {}
-    document.querySelectorAll("[data-setlang]").forEach(function (a) {
-      a.addEventListener("click", function () { try { localStorage.setItem("tribespy_lang", "fr"); } catch (e) {} });
-    });
-    var wantsFr = (navigator.language || "").toLowerCase().indexOf("fr") === 0;
-    if (saved === "fr" || (!saved && wantsFr && location.hash === "")) location.replace("fr/");
-  })();
+  // Un clic sur EN mémorise le choix pour ne pas revenir ici automatiquement.
+  document.querySelectorAll("[data-setlang]").forEach(function (a) {
+    a.addEventListener("click", function () { try { localStorage.setItem("tribespy_lang", "en"); } catch (e) {} });
+  });
 </script>
-
 </body>
 </html>
