@@ -169,7 +169,7 @@ footer p { max-width: 38rem; }
       <h1 style="margin-top:.8rem">Voyez qui joue sur vos serveurs, directement dans Discord.</h1>
       <p class="lead">TribeSpy affiche les joueurs en ligne, retient la dernière connexion de chacun et vous prévient quand un serveur tombe ou qu'un joueur surveillé arrive.</p>
       <div class="cta">
-        <a class="btn primary" id="invite" href="#demarrer">Ajouter à Discord</a>
+        <a class="btn primary" id="invite" href="https://discord.com/oauth2/authorize?client_id=1556578781680898060&permissions=216064&scope=bot%20applications.commands" target="_blank" rel="noopener">Ajouter à Discord</a>
         <a class="btn" href="#apercu">Voir un aperçu</a>
       </div>
       <p class="note">Gratuit jusqu'à 3 serveurs de jeu. Le bot ne lit pas vos messages.</p>
@@ -329,12 +329,5 @@ footer p { max-width: 38rem; }
 </div>
 
 <script>
-  // Remplacez par l'Application ID de votre bot (portail développeur Discord > General Information).
-  const CLIENT_ID = "1556578781680898060";
-  const a = document.getElementById("invite");
-  if (a && CLIENT_ID !== "1556578781680898060") {
-    a.href = "https://discord.com/oauth2/authorize?client_id=" + CLIENT_ID + "&permissions=216064&scope=bot%20applications.commands";
-    a.target = "_blank"; a.rel = "noopener";
-  }
   document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
