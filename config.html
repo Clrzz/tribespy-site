@@ -323,7 +323,11 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
       })) : h("div", { class: "msg", text: t("noGuilds") });
       show(intro(t("pick"), t("pickLead")), list,
         h("div", { class: "actions" }, h("button", { class: "linkbtn", type: "button", text: t("refresh"), onclick: renderGuilds })));
-    }).catch(fail);
+    }).catch(function (e) {                      // ex. bot en train de démarrer : message dans la page + bouton pour réessayer
+      if (e && e.handled) return;
+      show(intro(t("pick"), t("pickLead")), h("div", { class: "msg err", text: (e && e.message) || t("errGeneric") }),
+        h("div", { class: "actions" }, h("button", { class: "linkbtn", type: "button", text: t("refresh"), onclick: renderGuilds })));
+    });
   }
 
   var tab = "general";
