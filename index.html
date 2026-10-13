@@ -177,7 +177,7 @@ footer p { max-width: 38rem; }
     <a class="brand" href="#"><span class="logo" role="img" aria-label="TribeSpy logo"></span><span>Tribe<b>Spy</b></span></a>
     <div class="top-end">
     <nav class="main" aria-label="Navigation">
-      <a href="#features">Features</a><a href="#preview">Preview</a><a href="#start">Get started</a>
+      <a href="#features">Features</a><a href="#preview">Preview</a><a href="#start">Get started</a><a href="guide.html?lang=en">Setup guide</a>
       <a href="#commands">Commands</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support</a><a href="fr.html" data-setlang="en" hreflang="fr" lang="fr" aria-label="Voir en français">FR</a>
     </nav>
     <a class="btn primary sm" href="config.html">Configuration</a>
@@ -342,6 +342,8 @@ footer p { max-width: 38rem; }
 
 <script>
   document.getElementById("yr").textContent = new Date().getFullYear();
+  // Après « Add to Discord » (ouvert dans un nouvel onglet), cet onglet affiche le tuto de configuration.
+  document.getElementById("invite").addEventListener("click", function () { setTimeout(function () { location.href = "guide.html?lang=en"; }, 300); });
   // Langue : choix mémorisé, sinon langue du navigateur (les francophones sont envoyés vers fr.html).
   (function () {
     var saved = null;

@@ -447,8 +447,13 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
   function route() {
     if (!API) return renderNotReady();
     readLoginHash();
-    if (!token) { setUser(null); return renderLogin(); }
     var m = /^#g=(\d+)$/.exec(location.hash);
+    if (!token) {                                // lien « Configurer sur le site » depuis Discord : on y revient après la connexion
+      if (m) store("tribespy_next", m[1]);
+      setUser(null); return renderLogin();
+    }
+    var next = store("tribespy_next");
+    if (next && !m) { store("tribespy_next", null); location.hash = "g=" + next; return; }
     if (m) {
       renderGuild(m[1]);
       if (!me) api("GET", "/api/me").then(function (d) { me = d; setUser(d.user); }).catch(function () {});
