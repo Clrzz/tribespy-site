@@ -60,7 +60,7 @@ article { display: grid; gap: 2rem; }
 .before b { color: var(--fg); }
 
 .choose { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.choose button { text-align: left; background: var(--panel); border: 1px solid var(--line); color: var(--fg); padding: 1rem 1.1rem; cursor: pointer; display: grid; gap: .3rem; font: inherit; }
+.choose button { text-align: left; align-content: start; background: var(--panel); border: 1px solid var(--line); color: var(--fg); padding: 1rem 1.1rem; cursor: pointer; display: grid; gap: .3rem; font: inherit; }
 .choose button:hover { border-color: var(--steel); }
 .choose button[aria-selected="true"] { border-color: var(--lime); box-shadow: 0 0 30px -14px var(--lime-glow); }
 .choose .t { font: 600 1.05rem/1.2 var(--f-head); }
@@ -120,186 +120,94 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
     <article lang="en">
       <div class="intro">
         <span class="label">Setup guide</span>
-        <h1>Set up TribeSpy in 2 minutes</h1>
-        <p>You've added the bot to your Discord server? Great. Follow the steps below, there are only four of them.</p>
+        <h1>Set up TribeSpy in 3 steps</h1>
+        <p>You need the <b>Manage Server</b> permission and your game server's <b>IP:query port</b>.</p>
       </div>
 
-      <div class="before">
-        <h3>Before you start</h3>
-        <ul>
-          <li>You need the <b>Manage Server</b> permission on the Discord server (the owner and admins have it).</li>
-          <li>Have your game server's <b>IP</b> and <b>query port</b> ready. You'll find them in your host's panel.</li>
-        </ul>
-      </div>
-
-      <div style="display:grid;gap:.8rem">
-        <h2>Pick one way</h2>
-        <div class="choose" role="tablist">
-          <button type="button" role="tab" data-way="web" aria-selected="true"><span class="tag">Easiest</span><span class="t">🌐 On the website</span><span class="d">Clicks and dropdowns, nothing to type.</span></button>
-          <button type="button" role="tab" data-way="discord" aria-selected="false"><span class="t">💬 In Discord</span><span class="d">With /config commands, without leaving Discord.</span></button>
-        </div>
+      <div class="choose" role="tablist">
+        <button type="button" role="tab" data-way="web" aria-selected="true"><span class="tag">Easiest</span><span class="t">🌐 On the website</span></button>
+        <button type="button" role="tab" data-way="discord" aria-selected="false"><span class="t">💬 In Discord</span></button>
       </div>
 
       <ol class="steps" data-panel="web">
-        <li><h3>Open the configuration page</h3><div class="step-body">
-          <p>Click <strong>Configuration</strong> at the top right of the website, or the <strong>Configure on the website</strong> button in the bot's welcome message on Discord.</p>
+        <li><h3>Log in</h3><div class="step-body">
+          <p>Open <strong>Configuration</strong>, log in with Discord, then click <strong>Configure</strong> next to your server.</p>
           <p><a class="btn primary" href="config.html">Open Configuration</a></p>
         </div></li>
-        <li><h3>Log in with Discord</h3><div class="step-body">
-          <p>Click <strong>Log in with Discord</strong>, then <strong>Authorize</strong> on the Discord page. We only see your name and your server list.</p>
-          <p>Your servers show up. Click <strong>Configure</strong> next to the one where you added the bot.</p>
-          <div class="tip">You see <b>Add the bot</b> instead of Configure? The bot isn't on that server yet: click it to add it, then come back and click <b>Refresh the list</b>.</div>
-        </div></li>
-        <li><h3>Choose the channels, time zone and language</h3><div class="step-body">
-          <p>In the <strong>General</strong> tab:</p>
-          <ul>
-            <li><strong>Dashboard channel</strong>: where the list of online players will be shown. A dedicated channel like <code>#players-online</code> is ideal.</li>
-            <li><strong>History channel</strong> (optional): connections, outage alerts, blacklist alerts and recaps.</li>
-            <li><strong>Time zone</strong>: start typing your city (e.g. <code>Europe/London</code>) and pick it in the list.</li>
-            <li><strong>Bot language</strong>: English or Français.</li>
-          </ul>
-          <p>Click <strong>Save</strong>. A green message confirms each setting.</p>
-          <div class="tip">A channel shows <b>(missing permissions)</b>? In Discord, give the bot <b>View Channel</b>, <b>Send Messages</b> and <b>Embed Links</b> in that channel.</div>
+        <li><h3>Pick the channel</h3><div class="step-body">
+          <p>Choose the <strong>dashboard channel</strong> (where players will show up), then click <strong>Save</strong>.</p>
         </div></li>
         <li><h3>Add your game server</h3><div class="step-body">
-          <p>In the <strong>Game servers</strong> tab, fill in:</p>
-          <ul>
-            <li><strong>Display name</strong>: the name shown on Discord, e.g. <code>Ragnarok</code>.</li>
-            <li><strong>Address</strong>: <code>IP:query port</code>, e.g. <code>151.242.127.127:27018</code>.</li>
-          </ul>
-          <p>Click <strong>Add</strong>. The bot checks right away that the server responds. Repeat for each map of your cluster.</p>
-          <p><span class="ok">✔</span> <strong>Done!</strong> The dashboard appears in your channel within a minute.</p>
+          <p><strong>Game servers</strong> tab: a name and the address <code>IP:query port</code>, then <strong>Add</strong>.</p>
+          <p><span class="ok">✔</span> <strong>Done!</strong> The dashboard shows up within a minute.</p>
         </div></li>
       </ol>
 
       <ol class="steps" data-panel="discord" hidden>
-        <li><h3>Choose the channels</h3><div class="step-body">
-          <p>In any channel, type <code>/config channels</code>, then pick the <strong>dashboard</strong> channel. You can also add a <strong>history</strong> channel for alerts and recaps (optional).</p>
-          <div class="dc"><div class="bar"><span class="cmd">/config channels</span><span class="opt">dashboard: #players-online</span><span class="opt">history: #tribespy-logs</span></div>
-            <div class="reply">✅ Dashboard: #players-online<br>✅ History: #tribespy-logs</div></div>
+        <li><h3>Pick the channel</h3><div class="step-body">
+          <div class="dc"><div class="bar"><span class="cmd">/config channels</span><span class="opt">dashboard: #players-online</span></div></div>
         </div></li>
         <li><h3>Add your game server</h3><div class="step-body">
-          <p>Type <code>/config add-server</code>, give it a <strong>name</strong> and the <strong>address</strong> as <code>IP:query port</code>. Repeat for each map.</p>
-          <div class="dc"><div class="bar"><span class="cmd">/config add-server</span><span class="opt">name: Ragnarok</span><span class="opt">address: 151.242.127.127:27018</span></div>
-            <div class="reply">✅ <b>Ragnarok</b> added — server reachable (12/70 players).</div></div>
+          <div class="dc"><div class="bar"><span class="cmd">/config add-server</span><span class="opt">name: Ragnarok</span><span class="opt">address: 151.242.127.127:27018</span></div></div>
         </div></li>
-        <li><h3>Set your time zone</h3><div class="step-body">
-          <p>Type <code>/config timezone</code>, start typing your city (e.g. <code>Europe/Lon</code>) and pick it in the suggestions. Times and recaps will use it.</p>
-        </div></li>
-        <li><h3>Pick the language and check</h3><div class="step-body">
-          <p><code>/config language</code> switches the bot to English or Français. Then type <code>/config status</code>: everything should be green.</p>
-          <p><span class="ok">✔</span> <strong>Done!</strong> The dashboard appears in your channel within a minute.</p>
+        <li><h3>Check</h3><div class="step-body">
+          <div class="dc"><div class="bar"><span class="cmd">/config status</span></div></div>
+          <p><span class="ok">✔</span> <strong>Done!</strong> The dashboard shows up within a minute.</p>
         </div></li>
       </ol>
 
       <section class="help">
-        <h2>Going further</h2>
-        <details><summary>Watch players with the blacklist</summary><p>Website: <b>Blacklist</b> tab. Discord: <code>/blacklist add</code> with the exact player name. You get an alert in the history channel when they connect, and a raid alert if 3 of them show up on the same map within 5 minutes.</p></details>
-        <details><summary>Show tribes next to player names</summary><p>Website: <b>Tribes</b> tab. Discord: <code>/tribe set</code> with the player and the tribe. The tribe shows up in brackets on the dashboard.</p></details>
-        <details><summary>The bot says my server isn't responding</summary><ul>
-          <li>Make sure you used the <b>query port</b>, not the game port. On ARK it's often 27015 or close to it.</li>
-          <li>Use the <b>public IP</b> (or domain) of the server, never a local one like 192.168.x.x.</li>
-          <li>Check that the server is online and that its firewall lets queries through.</li>
-          <li>The server stays added: the bot will pick it up as soon as it responds.</li>
-        </ul></details>
-        <details><summary>Nothing shows up in my channel</summary><p>Type <code>/config status</code>. If a channel shows "missing permissions", give the bot View Channel, Send Messages and Embed Links in it. The dashboard refreshes every minute.</p></details>
-        <details><summary>See this guide again in Discord</summary><p>Type <code>/setup</code> at any time. <code>/help</code> lists all the commands.</p></details>
+        <h2>A problem?</h2>
+        <details><summary>“The server isn't responding”</summary><p>Use the <b>query port</b> (not the game port) and the <b>public IP</b> of the server. You'll find both in your host's panel.</p></details>
+        <details><summary>Nothing shows up in the channel</summary><p>Give the bot <b>View Channel</b>, <b>Send Messages</b> and <b>Embed Links</b> in that channel.</p></details>
       </section>
-
-      <div class="cta"><a class="btn primary" href="config.html">Open Configuration</a><a class="btn" href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Ask on the support server</a></div>
     </article>
 
     <!-- ================================ FRANÇAIS ================================ -->
     <article lang="fr" hidden>
       <div class="intro">
         <span class="label">Tuto</span>
-        <h1>Configurer TribeSpy en 2 minutes</h1>
-        <p>Vous avez ajouté le bot à votre serveur Discord ? Parfait. Suivez les étapes ci-dessous, il n'y en a que quatre.</p>
+        <h1>Configurer TribeSpy en 3 étapes</h1>
+        <p>Il faut la permission <b>Gérer le serveur</b> et l'<b>IP:port de requête</b> de votre serveur de jeu.</p>
       </div>
 
-      <div class="before">
-        <h3>Avant de commencer</h3>
-        <ul>
-          <li>Il faut la permission <b>Gérer le serveur</b> sur le serveur Discord (le propriétaire et les admins l'ont).</li>
-          <li>Gardez sous la main l'<b>IP</b> et le <b>port de requête</b> (query port) de votre serveur de jeu. Ils sont dans le panel de votre hébergeur.</li>
-        </ul>
-      </div>
-
-      <div style="display:grid;gap:.8rem">
-        <h2>Choisissez une méthode</h2>
-        <div class="choose" role="tablist">
-          <button type="button" role="tab" data-way="web" aria-selected="true"><span class="tag">Le plus simple</span><span class="t">🌐 Sur le site</span><span class="d">Des clics et des menus, rien à taper.</span></button>
-          <button type="button" role="tab" data-way="discord" aria-selected="false"><span class="t">💬 Dans Discord</span><span class="d">Avec les commandes /config, sans quitter Discord.</span></button>
-        </div>
+      <div class="choose" role="tablist">
+        <button type="button" role="tab" data-way="web" aria-selected="true"><span class="tag">Le plus simple</span><span class="t">🌐 Sur le site</span></button>
+        <button type="button" role="tab" data-way="discord" aria-selected="false"><span class="t">💬 Dans Discord</span></button>
       </div>
 
       <ol class="steps" data-panel="web">
-        <li><h3>Ouvrez la page Configuration</h3><div class="step-body">
-          <p>Cliquez sur <strong>Configuration</strong> en haut à droite du site, ou sur le bouton <strong>Configurer sur le site</strong> du message de bienvenue du bot sur Discord.</p>
+        <li><h3>Connectez-vous</h3><div class="step-body">
+          <p>Ouvrez <strong>Configuration</strong>, connectez-vous avec Discord, puis cliquez sur <strong>Configurer</strong> à côté de votre serveur.</p>
           <p><a class="btn primary" href="config.html">Ouvrir la Configuration</a></p>
         </div></li>
-        <li><h3>Connectez-vous avec Discord</h3><div class="step-body">
-          <p>Cliquez sur <strong>Se connecter avec Discord</strong>, puis sur <strong>Autoriser</strong> sur la page de Discord. On voit seulement votre nom et la liste de vos serveurs.</p>
-          <p>Vos serveurs s'affichent. Cliquez sur <strong>Configurer</strong> à côté de celui où vous avez ajouté le bot.</p>
-          <div class="tip">Vous voyez <b>Ajouter le bot</b> au lieu de Configurer ? Le bot n'est pas encore sur ce serveur : cliquez dessus pour l'ajouter, revenez puis cliquez sur <b>Actualiser la liste</b>.</div>
-        </div></li>
-        <li><h3>Choisissez les salons, le fuseau et la langue</h3><div class="step-body">
-          <p>Dans l'onglet <strong>Général</strong> :</p>
-          <ul>
-            <li><strong>Salon du tableau de bord</strong> : là où s'affiche la liste des joueurs en ligne. Un salon dédié comme <code>#joueurs-en-ligne</code> est idéal.</li>
-            <li><strong>Salon d'historique</strong> (facultatif) : connexions, alertes de panne, alertes blacklist et bilans.</li>
-            <li><strong>Fuseau horaire</strong> : commencez à taper votre ville (ex. <code>Europe/Paris</code>) et choisissez-la dans la liste.</li>
-            <li><strong>Langue du bot</strong> : English ou Français.</li>
-          </ul>
-          <p>Cliquez sur <strong>Enregistrer</strong>. Un message vert confirme chaque réglage.</p>
-          <div class="tip">Un salon affiche <b>(droits manquants)</b> ? Dans Discord, donnez au bot <b>Voir le salon</b>, <b>Envoyer des messages</b> et <b>Intégrer des liens</b> dans ce salon.</div>
+        <li><h3>Choisissez le salon</h3><div class="step-body">
+          <p>Choisissez le <strong>salon du tableau de bord</strong> (là où s'affichent les joueurs), puis cliquez sur <strong>Enregistrer</strong>.</p>
         </div></li>
         <li><h3>Ajoutez votre serveur de jeu</h3><div class="step-body">
-          <p>Dans l'onglet <strong>Serveurs de jeu</strong>, remplissez :</p>
-          <ul>
-            <li><strong>Nom affiché</strong> : le nom qu'on verra sur Discord, ex. <code>Ragnarok</code>.</li>
-            <li><strong>Adresse</strong> : <code>IP:port de requête</code>, ex. <code>151.242.127.127:27018</code>.</li>
-          </ul>
-          <p>Cliquez sur <strong>Ajouter</strong>. Le bot vérifie tout de suite que le serveur répond. Recommencez pour chaque map de votre cluster.</p>
-          <p><span class="ok">✔</span> <strong>C'est fini !</strong> Le tableau de bord apparaît dans votre salon en moins d'une minute.</p>
+          <p>Onglet <strong>Serveurs de jeu</strong> : un nom et l'adresse <code>IP:port de requête</code>, puis <strong>Ajouter</strong>.</p>
+          <p><span class="ok">✔</span> <strong>C'est fini !</strong> Le tableau de bord apparaît en moins d'une minute.</p>
         </div></li>
       </ol>
 
       <ol class="steps" data-panel="discord" hidden>
-        <li><h3>Choisissez les salons</h3><div class="step-body">
-          <p>Dans n'importe quel salon, tapez <code>/config channels</code>, puis choisissez le salon du <strong>tableau de bord</strong>. Vous pouvez aussi ajouter un salon d'<strong>historique</strong> pour les alertes et les bilans (facultatif).</p>
-          <div class="dc"><div class="bar"><span class="cmd">/config channels</span><span class="opt">dashboard: #joueurs-en-ligne</span><span class="opt">history: #tribespy-logs</span></div>
-            <div class="reply">✅ Tableau de bord : #joueurs-en-ligne<br>✅ Historique : #tribespy-logs</div></div>
+        <li><h3>Choisissez le salon</h3><div class="step-body">
+          <div class="dc"><div class="bar"><span class="cmd">/config channels</span><span class="opt">dashboard: #joueurs-en-ligne</span></div></div>
         </div></li>
         <li><h3>Ajoutez votre serveur de jeu</h3><div class="step-body">
-          <p>Tapez <code>/config add-server</code>, donnez un <strong>nom</strong> et l'<strong>adresse</strong> sous la forme <code>IP:port de requête</code>. Recommencez pour chaque map.</p>
-          <div class="dc"><div class="bar"><span class="cmd">/config add-server</span><span class="opt">name: Ragnarok</span><span class="opt">address: 151.242.127.127:27018</span></div>
-            <div class="reply">✅ <b>Ragnarok</b> ajouté — serveur joignable (12/70 joueurs).</div></div>
+          <div class="dc"><div class="bar"><span class="cmd">/config add-server</span><span class="opt">name: Ragnarok</span><span class="opt">address: 151.242.127.127:27018</span></div></div>
         </div></li>
-        <li><h3>Réglez le fuseau horaire</h3><div class="step-body">
-          <p>Tapez <code>/config timezone</code>, commencez à taper votre ville (ex. <code>Europe/Par</code>) et choisissez-la dans les suggestions. Les heures et les bilans l'utiliseront.</p>
-        </div></li>
-        <li><h3>Choisissez la langue et vérifiez</h3><div class="step-body">
-          <p><code>/config language</code> passe le bot en Français ou en English. Tapez ensuite <code>/config status</code> : tout doit être au vert.</p>
-          <p><span class="ok">✔</span> <strong>C'est fini !</strong> Le tableau de bord apparaît dans votre salon en moins d'une minute.</p>
+        <li><h3>Vérifiez</h3><div class="step-body">
+          <div class="dc"><div class="bar"><span class="cmd">/config status</span></div></div>
+          <p><span class="ok">✔</span> <strong>C'est fini !</strong> Le tableau de bord apparaît en moins d'une minute.</p>
         </div></li>
       </ol>
 
       <section class="help">
-        <h2>Pour aller plus loin</h2>
-        <details><summary>Surveiller des joueurs avec la blacklist</summary><p>Site : onglet <b>Blacklist</b>. Discord : <code>/blacklist add</code> avec le nom exact du joueur. Une alerte arrive dans le salon d'historique quand il se connecte, et une alerte raid si 3 joueurs surveillés arrivent sur la même map en 5 minutes.</p></details>
-        <details><summary>Afficher les tribus à côté des joueurs</summary><p>Site : onglet <b>Tribus</b>. Discord : <code>/tribe set</code> avec le joueur et la tribu. La tribu s'affiche entre crochets sur le tableau de bord.</p></details>
-        <details><summary>Le bot dit que mon serveur ne répond pas</summary><ul>
-          <li>Vérifiez que vous avez mis le <b>port de requête</b> et pas le port de jeu. Sur ARK, c'est souvent 27015 ou un port proche.</li>
-          <li>Utilisez l'<b>IP publique</b> (ou le domaine) du serveur, jamais une IP locale comme 192.168.x.x.</li>
-          <li>Vérifiez que le serveur est allumé et que son pare-feu laisse passer les requêtes.</li>
-          <li>Le serveur reste ajouté : le bot le prendra en compte dès qu'il répondra.</li>
-        </ul></details>
-        <details><summary>Rien ne s'affiche dans mon salon</summary><p>Tapez <code>/config status</code>. Si un salon affiche « droits manquants », donnez au bot Voir le salon, Envoyer des messages et Intégrer des liens dans ce salon. Le tableau de bord se met à jour chaque minute.</p></details>
-        <details><summary>Revoir ce tuto dans Discord</summary><p>Tapez <code>/setup</code> à tout moment. <code>/help</code> liste toutes les commandes.</p></details>
+        <h2>Un souci ?</h2>
+        <details><summary>« Le serveur ne répond pas »</summary><p>Utilisez le <b>port de requête</b> (pas le port de jeu) et l'<b>IP publique</b> du serveur. Les deux sont dans le panel de votre hébergeur.</p></details>
+        <details><summary>Rien ne s'affiche dans le salon</summary><p>Donnez au bot <b>Voir le salon</b>, <b>Envoyer des messages</b> et <b>Intégrer des liens</b> dans ce salon.</p></details>
       </section>
-
-      <div class="cta"><a class="btn primary" href="config.html">Ouvrir la Configuration</a><a class="btn" href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Demander sur le serveur support</a></div>
     </article>
   </main>
 

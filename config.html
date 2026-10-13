@@ -156,7 +156,7 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
       back: "All servers", tGeneral: "General", tServers: "Game servers", tBlacklist: "Blacklist", tTribes: "Tribes",
       dash: "Dashboard channel", dashHint: "Live players, updated every minute.",
       hist: "History channel", histHint: "Connections, alerts and recaps (optional).", none: "— None —", choose: "— Choose a channel —",
-      noPerm: " (missing permissions)", tz: "Time zone", tzHint: "E.g. Europe/Paris, America/New_York.",
+      noPerm: " (missing permissions)", tz: "Time zone", tzHint: "Pick your city, sorted by region.", tzCommon: "Most used",
       lang: "Bot language", save: "Save",
       srvName: "Display name", srvNamePh: "Ragnarok", addr: "Address (IP:query port)", addrPh: "151.242.127.127:27018",
       addrHint: "Use the query port, often different from the game port. The bot checks it responds.",
@@ -184,7 +184,7 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
       back: "Tous les serveurs", tGeneral: "Général", tServers: "Serveurs de jeu", tBlacklist: "Blacklist", tTribes: "Tribus",
       dash: "Salon du tableau de bord", dashHint: "Joueurs en ligne, mis à jour chaque minute.",
       hist: "Salon d'historique", histHint: "Connexions, alertes et bilans (facultatif).", none: "— Aucun —", choose: "— Choisir un salon —",
-      noPerm: " (droits manquants)", tz: "Fuseau horaire", tzHint: "Ex. Europe/Paris, America/Montreal.",
+      noPerm: " (droits manquants)", tz: "Fuseau horaire", tzHint: "Choisissez votre ville, classée par continent.", tzCommon: "Les plus utilisés",
       lang: "Langue du bot", save: "Enregistrer",
       srvName: "Nom affiché", srvNamePh: "Ragnarok", addr: "Adresse (IP:port de requête)", addrPh: "151.242.127.127:27018",
       addrHint: "Utilisez le port de requête, souvent différent du port de jeu. Le bot vérifie qu'il répond.",
@@ -365,10 +365,25 @@ footer { border-top: 1px solid var(--line); padding-block: 1.4rem 2.2rem; color:
 
   function general(gid, d) {
     var s = d.settings;
-    var dash = h("select", { id: "f-dash", required: true }, channelOptions(d, s.channel_id, t("choose")));
+    var dash = h("select", { id: "f-dash" }, channelOptions(d, s.channel_id, t("choose")));
     var hist = h("select", { id: "f-hist" }, channelOptions(d, s.history_channel_id, t("none")));
-    var tz = h("input", { id: "f-tz", list: "tzs", value: s.tz, autocomplete: "off", spellcheck: "false" });
-    var tzs = h("datalist", { id: "tzs" }, d.timezones.map(function (z) { return h("option", { value: z }); }));
+    // Liste déroulante groupée par continent (plus fiable qu'un champ à suggestions, surtout sur mobile).
+    var common = ["Europe/Paris", "Europe/Brussels", "Europe/London", "America/Montreal", "America/New_York",
+                  "America/Chicago", "America/Los_Angeles", "Australia/Sydney"];
+    var groups = {};
+    d.timezones.forEach(function (z) {
+      var i = z.indexOf("/");
+      if (i < 0 && z !== "UTC") return;
+      var region = i < 0 ? "UTC" : z.slice(0, i);
+      if (["Etc", "SystemV", "US", "Canada", "Brazil", "Chile", "Mexico"].indexOf(region) >= 0) return;
+      (groups[region] = groups[region] || []).push(z);
+    });
+    function opt(z) { return h("option", { value: z, selected: z === s.tz, text: z.replace(/_/g, " ") }); }
+    var tz = h("select", { id: "f-tz" },
+      h("optgroup", { label: t("tzCommon") }, common.filter(function (z) { return d.timezones.indexOf(z) >= 0; }).map(opt)),
+      Object.keys(groups).sort().map(function (r) { return h("optgroup", { label: r }, groups[r].map(opt)); }));
+    if (!tz.querySelector("option[selected]") && s.tz) tz.insertBefore(opt(s.tz), tz.firstChild);
+    var tzs = null;
     var lg = h("select", { id: "f-lang" }, [["en", "English"], ["fr", "Français"]].map(function (x) {
       return h("option", { value: x[0], selected: x[0] === s.lang, text: x[1] });
     }));
