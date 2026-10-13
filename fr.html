@@ -75,6 +75,8 @@ nav.main a:hover { color: var(--fg); }
 .btn.primary:hover { filter: brightness(1.08); }
 .btn:not(.primary) { clip-path: none; }
 .btn:not(.primary):hover { background: var(--panel-2); }
+.btn.sm { padding: .6rem .95rem; font-size: .85rem; }
+.top-end { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.4rem; }
 
 /* hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; padding-block: 3.2rem; }
@@ -173,10 +175,13 @@ footer p { max-width: 38rem; }
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#"><span class="logo" role="img" aria-label="Logo TribeSpy"></span><span>Tribe<b>Spy</b></span></a>
+    <div class="top-end">
     <nav class="main" aria-label="Navigation">
       <a href="#fonctions">Fonctions</a><a href="#apercu">Aperçu</a><a href="#demarrer">Démarrer</a>
       <a href="#commandes">Commandes</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support</a><a href="index.html" data-setlang="en" hreflang="en" lang="en" aria-label="View in English">EN</a>
     </nav>
+    <a class="btn primary sm" href="config.html">Configuration</a>
+    </div>
   </header>
 
   <div class="hero">
@@ -243,7 +248,7 @@ footer p { max-width: 38rem; }
     <div class="head"><span class="label">Démarrer</span><h2>Prêt en 3 étapes</h2><p>Réservé aux membres qui ont la permission « Gérer le serveur ».</p></div>
     <ol class="steps">
       <li><h3>Ajoutez le bot</h3><p>Cliquez sur « Ajouter à Discord » et choisissez votre serveur.</p></li>
-      <li><h3>Choisissez le salon</h3><p>Tapez <code>/config channels</code> pour choisir où afficher le tableau de bord.</p></li>
+      <li><h3>Choisissez le salon</h3><p>Ouvrez la <a href="config.html">Configuration</a> sur ce site, ou tapez <code>/config channels</code> dans Discord, pour choisir où afficher le tableau de bord.</p></li>
       <li><h3>Ajoutez vos serveurs</h3><p>Tapez <code>/config add-server</code> avec un nom et l'adresse sous la forme <code>IP:port</code> (le port de requête). Puis <code>/config language</code> pour passer le bot en français.</p></li>
     </ol>
   </section>
@@ -310,6 +315,7 @@ footer p { max-width: 38rem; }
         <ul>
           <li><b>Pseudos de jeu</b>, maps, heure de dernière connexion et temps de jeu.</li>
           <li><b>Votre configuration</b> : salons, serveurs de jeu, blacklist et tribus.</li>
+          <li><b>Configuration web</b> : quand vous vous connectez, votre identifiant Discord, votre nom et la liste des serveurs que vous gérez sont gardés le temps de la session (7 jours).</li>
           <li><b>Rien d'autre</b> : ni messages, ni membres Discord, ni paiement.</li>
           <li>Chaque serveur Discord ne voit que ses propres données.</li>
         </ul>
