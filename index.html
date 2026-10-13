@@ -75,6 +75,8 @@ nav.main a:hover { color: var(--fg); }
 .btn.primary:hover { filter: brightness(1.08); }
 .btn:not(.primary) { clip-path: none; }
 .btn:not(.primary):hover { background: var(--panel-2); }
+.btn.sm { padding: .6rem .95rem; font-size: .85rem; }
+.top-end { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.4rem; }
 
 /* hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; padding-block: 3.2rem; }
@@ -173,10 +175,13 @@ footer p { max-width: 38rem; }
 <div class="wrap">
   <header class="top">
     <a class="brand" href="#"><span class="logo" role="img" aria-label="TribeSpy logo"></span><span>Tribe<b>Spy</b></span></a>
+    <div class="top-end">
     <nav class="main" aria-label="Navigation">
       <a href="#features">Features</a><a href="#preview">Preview</a><a href="#start">Get started</a>
       <a href="#commands">Commands</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="https://discord.gg/NjhCaJJ2g" target="_blank" rel="noopener">Support</a><a href="fr.html" data-setlang="en" hreflang="fr" lang="fr" aria-label="Voir en français">FR</a>
     </nav>
+    <a class="btn primary sm" href="config.html">Configuration</a>
+    </div>
   </header>
 
   <div class="hero">
@@ -243,7 +248,7 @@ footer p { max-width: 38rem; }
     <div class="head"><span class="label">Get started</span><h2>Ready in 3 steps</h2><p>Requires the “Manage Server” permission.</p></div>
     <ol class="steps">
       <li><h3>Add the bot</h3><p>Click “Add to Discord” and pick your server.</p></li>
-      <li><h3>Pick a channel</h3><p>Type <code>/config channels</code> to choose where the dashboard is displayed.</p></li>
+      <li><h3>Pick a channel</h3><p>Open <a href="config.html">Configuration</a> on this site, or type <code>/config channels</code> in Discord, to choose where the dashboard is displayed.</p></li>
       <li><h3>Add your servers</h3><p>Type <code>/config add-server</code> with a name and the address as <code>IP:port</code> (the query port). The bot checks that it responds.</p></li>
     </ol>
   </section>
@@ -311,6 +316,7 @@ footer p { max-width: 38rem; }
         <ul>
           <li><b>In-game names</b>, maps, last connection time and playtime.</li>
           <li><b>Your configuration</b>: channels, game servers, blacklist and tribes.</li>
+          <li><b>Web configuration</b>: when you log in, your Discord ID, name and the list of servers you manage are kept for the length of your session (7 days).</li>
           <li><b>Nothing else</b>: no messages, no Discord members, no payment data.</li>
           <li>Each Discord server only sees its own data.</li>
         </ul>
